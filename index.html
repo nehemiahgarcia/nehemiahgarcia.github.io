@@ -218,13 +218,25 @@
   .views.hot { background: var(--amber); color: #1a1206; }
   .flag { top: 8px; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--amber); border: 1px solid rgba(255, 181, 71, .4); }
   .reel .cap { font-size: 14px; line-height: 1.4; }
-  .reel .cap small { display: block; font-family: var(--mono); font-size: 11px; color: var(--muted); margin-top: 3px; }
+  .reel .cap .t {
+    display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2;
+    overflow: hidden; min-height: 2.8em;
+  }
+  .reel .cap small {
+    display: block; font-family: var(--mono); font-size: 11px; color: var(--muted); margin-top: 3px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
 
+  .reels.su-grid { grid-template-columns: 2.3fr 2.3fr 1fr 1fr; align-items: start; }
+  .su-grid .big { grid-row: span 2; }
+  .su-grid .big .cap { font-size: 17px; }
+  .su-grid .big .cap .t { font-family: var(--display); font-weight: 700; }
+  .su-grid .big .cap small { font-size: 12px; }
   .stats { margin-top: 22px; display: grid; gap: 12px; }
   .stats-label, .stats-now { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: .04em; }
   .stats-label { text-transform: uppercase; letter-spacing: .1em; }
   .stats-now b { color: var(--text); font-weight: 500; }
-  .stat-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .stat-row { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 14px 32px; }
   .stat-row div { display: grid; gap: 2px; }
   .stat-row b { font-family: var(--display); font-weight: 800; font-size: clamp(26px, 3.4vw, 34px); line-height: 1; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
   .stat-row div:first-child b { color: var(--amber); font-size: clamp(38px, 5vw, 52px); }
@@ -484,6 +496,8 @@
     .caps, .certs { grid-template-columns: 1fr; }
     .contact-grid { grid-template-columns: 1fr; }
     .pair, .longform { grid-template-columns: 1fr; }
+    .reels.su-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .su-grid .big { grid-row: auto; }
     .pair > div + div { margin-top: 56px; }
     .quotes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .ai, .photos { grid-template-columns: 1fr; }
@@ -634,27 +648,27 @@
       <div class="reels">
         <a class="reel" href="https://www.tiktok.com/@thevlogbites/video/7660822244444228872" target="_blank" rel="noopener">
           <div class="thumb"><img src="media/tt/7660822244444228872.jpg" alt="" loading="lazy"><span class="views hot">▶ 2.5M</span></div>
-          <div class="cap">Mom finds out her daughter kissed a guy<small>Laude family</small></div>
+          <div class="cap"><span class="t">Mom finds out her daughter kissed a guy</span><small>Laude family</small></div>
         </a>
         <a class="reel" href="https://www.tiktok.com/@thevlogbites/video/7667539117760204040" target="_blank" rel="noopener">
           <div class="thumb"><img src="media/tt/7667539117760204040.jpg" alt="" loading="lazy"><span class="views hot">▶ 1M</span></div>
-          <div class="cap">Jay R on favoritism and pressure at ASAP<small>Pop culture clip</small></div>
+          <div class="cap"><span class="t">Jay R on ASAP favoritism</span><small>Pop culture clip</small></div>
         </a>
         <a class="reel" href="https://www.tiktok.com/@thevlogbites/video/7667645117691415816" target="_blank" rel="noopener">
           <div class="thumb"><img src="media/tt/7667645117691415816.jpg" alt="" loading="lazy"><span class="views hot">▶ 943.4K</span></div>
-          <div class="cap">5 kids, 2 wives, and a secret<small>Pop culture clip</small></div>
+          <div class="cap"><span class="t">5 kids, 2 wives, and a secret</span><small>Pop culture clip</small></div>
         </a>
         <a class="reel" href="https://www.tiktok.com/@thevlogbites/video/7664796552904461586" target="_blank" rel="noopener">
           <div class="thumb"><img src="media/tt/7664796552904461586.jpg" alt="" loading="lazy"><span class="flag">Campaign</span><span class="views">▶ 408.5K</span></div>
-          <div class="cap">Del Monte × Vice Ganda: me justifying my cravings<small>Paid campaign via Whop</small></div>
+          <div class="cap"><span class="t">Del Monte × Vice Ganda</span><small>Paid campaign via Whop</small></div>
         </a>
         <a class="reel" href="https://www.tiktok.com/@thevlogbites/video/7672738782604512530" target="_blank" rel="noopener">
           <div class="thumb"><img src="media/tt/7672738782604512530.jpg" alt="" loading="lazy"><span class="flag">Campaign</span></div>
-          <div class="cap">Sienna Spiro × Stell: from covering her song to meeting her<small>Artist campaign</small></div>
+          <div class="cap"><span class="t">Sienna Spiro × Stell</span><small>Artist campaign</small></div>
         </a>
         <a class="reel" href="https://www.tiktok.com/@thevlogbites/video/7673078462298688775" target="_blank" rel="noopener">
           <div class="thumb"><img src="media/tt/7673078462298688775.jpg" alt="" loading="lazy"><span class="views">▶ 22.8K</span></div>
-          <div class="cap">Toni on years of audition rejections<small>Featured edit</small></div>
+          <div class="cap"><span class="t">Toni on years of rejections</span><small>Featured edit</small></div>
         </a>
       </div>
     </div>
@@ -668,30 +682,30 @@
           <a class="acct-link" href="https://www.instagram.com/successunlockedenespanol" target="_blank" rel="noopener">Instagram (Español) ↗</a>
         </div>
       </div>
-      <div class="reels">
-        <figure class="reel" style="margin:0">
+      <div class="reels su-grid">
+        <figure class="reel big" style="margin:0">
           <div class="thumb vplayer"><video data-src="media/andy-levine.mp4" poster="media/andy-levine.jpg" playsinline controls></video><button class="bigplay" type="button" aria-label="Play Andy Levine clip">▶</button></div>
-          <figcaption class="cap">Andy Levine: Built on Belonging<small>0:59 · plays here</small></figcaption>
+          <figcaption class="cap"><span class="t">Andy Levine: Built on Belonging</span><small>0:59 · plays here</small></figcaption>
         </figure>
-        <figure class="reel" style="margin:0">
+        <figure class="reel big" style="margin:0">
           <div class="thumb vplayer"><video data-src="media/mason-maggio.mp4" poster="media/mason-maggio.jpg" playsinline controls></video><button class="bigplay" type="button" aria-label="Play Mason Maggio clip">▶</button></div>
-          <figcaption class="cap">Mason Maggio: NASCAR's next rookie of the year<small>0:40 · plays here</small></figcaption>
+          <figcaption class="cap"><span class="t">Mason Maggio: NASCAR's next rookie of the year</span><small>0:40 · plays here</small></figcaption>
         </figure>
         <a class="reel" href="https://www.tiktok.com/@successunlocked_official/video/7662812579152022798" target="_blank" rel="noopener">
           <div class="thumb"><img src="media/tt/7662812579152022798.jpg" alt="" loading="lazy"></div>
-          <div class="cap">People stole from him and lied to his face<small>Dominique Wilkins · TikTok</small></div>
+          <div class="cap"><span class="t">They stole from him and lied</span><small>Dominique Wilkins · TikTok</small></div>
         </a>
         <a class="reel" href="https://www.tiktok.com/@successunlocked_official/video/7686512100138552590" target="_blank" rel="noopener">
           <div class="thumb"><img src="media/tt/7686512100138552590.jpg" alt="" loading="lazy"></div>
-          <div class="cap">Leadership goes beyond titles<small>Trixy Castro · TikTok</small></div>
+          <div class="cap"><span class="t">Leadership goes beyond titles</span><small>Trixy Castro · TikTok</small></div>
         </a>
         <a class="reel" href="https://www.tiktok.com/@successunlocked_official/video/7679461218611957006" target="_blank" rel="noopener">
           <div class="thumb"><img src="media/tt/7679461218611957006.jpg" alt="" loading="lazy"></div>
-          <div class="cap">Nobody can give you confidence<small>Dominique Wilkins · TikTok</small></div>
+          <div class="cap"><span class="t">Nobody can give you confidence</span><small>Dominique Wilkins · TikTok</small></div>
         </a>
         <a class="reel" href="https://www.tiktok.com/@successunlocked_official/video/7686241726826122510" target="_blank" rel="noopener">
           <div class="thumb"><img src="media/tt/7686241726826122510.jpg" alt="" loading="lazy"></div>
-          <div class="cap">Ideas mean nothing without execution<small>Trixy Castro · TikTok</small></div>
+          <div class="cap"><span class="t">Ideas mean nothing without execution</span><small>Trixy Castro · TikTok</small></div>
         </a>
       </div>
     </div>
@@ -705,15 +719,15 @@
         <div class="reels">
         <a class="reel" href="https://www.tiktok.com/@laescuelanueva_/video/7680598130332601614" target="_blank" rel="noopener">
           <div class="thumb"><img src="media/tt/7680598130332601614.jpg" alt="" loading="lazy"></div>
-          <div class="cap">Tu marca no es solo un logotipo<small>TikTok · ES</small></div>
+          <div class="cap"><span class="t">Tu marca no es solo un logotipo</span><small>TikTok · ES</small></div>
         </a>
         <a class="reel" href="https://www.tiktok.com/@laescuelanueva_/video/7679051446091894030" target="_blank" rel="noopener">
           <div class="thumb"><img src="media/tt/7679051446091894030.jpg" alt="" loading="lazy"></div>
-          <div class="cap">Evento en vivo con La Loba<small>TikTok · ES</small></div>
+          <div class="cap"><span class="t">Evento en vivo con La Loba</span><small>TikTok · ES</small></div>
         </a>
         <a class="reel" href="https://www.tiktok.com/@laescuelanueva_/video/7678024678006377741" target="_blank" rel="noopener">
           <div class="thumb"><img src="media/tt/7678024678006377741.jpg" alt="" loading="lazy"></div>
-          <div class="cap">¿Autoempleo o negocio?<small>TikTok · ES</small></div>
+          <div class="cap"><span class="t">¿Autoempleo o negocio?</span><small>TikTok · ES</small></div>
         </a>
         </div>
       </div>
@@ -728,15 +742,15 @@
         <div class="reels">
         <a class="reel" href="https://www.instagram.com/reel/DdZYogzlCLh/" target="_blank" rel="noopener">
           <div class="thumb"><img src="media/ig/DdZYogzlCLh.jpg" alt="" loading="lazy"></div>
-          <div class="cap">Dolly Parton didn’t wait on good luck<small>Instagram Reel</small></div>
+          <div class="cap"><span class="t">Dolly Parton didn’t wait on good luck</span><small>Instagram Reel</small></div>
         </a>
         <a class="reel" href="https://www.instagram.com/reel/DcmSHbElEgn/" target="_blank" rel="noopener">
           <div class="thumb"><img src="media/ig/DcmSHbElEgn.jpg" alt="" loading="lazy"></div>
-          <div class="cap">Shift your mindset, shift your reality<small>Instagram Reel</small></div>
+          <div class="cap"><span class="t">Shift your mindset, shift your reality</span><small>Instagram Reel</small></div>
         </a>
         <a class="reel" href="https://www.instagram.com/reel/DcliQjjDBa9/" target="_blank" rel="noopener">
           <div class="thumb"><img src="media/ig/DcliQjjDBa9.jpg" alt="" loading="lazy"></div>
-          <div class="cap">Alone in New York with no meetings lined up<small>Instagram Reel</small></div>
+          <div class="cap"><span class="t">Alone in NYC, no meetings</span><small>Instagram Reel</small></div>
         </a>
         </div>
       </div>
@@ -760,11 +774,11 @@
               <button type="button" class="lf-fs" aria-label="Fullscreen">⛶</button>
             </div>
           </div>
-          <div class="cap">The Human Highlight Film<small>Trixy Castro sits down with Dominique Wilkins · 8:42 · plays here</small></div>
+          <div class="cap"><span class="t">The Human Highlight Film</span><small>Trixy Castro sits down with Dominique Wilkins · 8:42 · plays here</small></div>
         </div>
         <a class="lf lf-link" href="https://drive.google.com/file/d/1uGTfAcfpKbQROjZL7s5LegiO92qqmpMl/view" target="_blank" rel="noopener">
           <div class="frame"><img src="media/adam-dorfman.jpg" alt="" loading="lazy"><span class="open">Watch on Google Drive ↗</span></div>
-          <div class="cap">Adam Dorfman: Built From the Ground Up<small>Full Success Unlocked episode</small></div>
+          <div class="cap"><span class="t">Adam Dorfman: Built From the Ground Up</span><small>Full Success Unlocked episode</small></div>
         </a>
       </div>
     </div>
@@ -797,11 +811,11 @@
       <div class="photos">
         <a class="photo-set" href="https://www.tiktok.com/@garcianehemiah_/photo/7463426522825624840" target="_blank" rel="noopener">
           <div class="mosaic"><img src="media/personal/campus-1.jpg" alt="" loading="lazy"><img src="media/personal/campus-2.jpg" alt="" loading="lazy"><img src="media/personal/campus-3.jpg" alt="" loading="lazy"><img src="media/personal/campus-4.jpg" alt="" loading="lazy"></div>
-          <div class="cap">A day in 3rd-year CompSci<small>Photo set · 26 photos · TikTok</small></div>
+          <div class="cap"><span class="t">A day in 3rd-year CompSci</span><small>Photo set · 26 photos · TikTok</small></div>
         </a>
         <a class="photo-set" href="https://www.tiktok.com/@garcianehemiah_/photo/7462961802192620808" target="_blank" rel="noopener">
           <div class="mosaic"><img src="media/personal/street-1.jpg" alt="" loading="lazy"><img src="media/personal/street-2.jpg" alt="" loading="lazy"><img src="media/personal/street-3.jpg" alt="" loading="lazy"><img src="media/personal/street-4.jpg" alt="" loading="lazy"></div>
-          <div class="cap">Street photography<small>Photo set · 15 photos · TikTok</small></div>
+          <div class="cap"><span class="t">Street photography</span><small>Photo set · 15 photos · TikTok</small></div>
         </a>
       </div>
     </div>
