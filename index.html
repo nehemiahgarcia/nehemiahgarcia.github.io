@@ -297,6 +297,11 @@
     background: var(--amber); color: #1a1206; padding: 6px 10px; border-radius: 6px;
   }
 
+  /* motion graphics */
+  .mg-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 2.4fr); gap: 16px 14px; align-items: center; }
+  .thumb.landscape { aspect-ratio: 16 / 9; }
+  .code-tag { color: var(--cyan); }
+
   /* AI edits & personal */
   .ai {
     display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 28px; align-items: center;
@@ -501,6 +506,8 @@
     .pair > div + div { margin-top: 56px; }
     .quotes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .ai, .photos { grid-template-columns: 1fr; }
+    .mg-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .mg-grid .wide { grid-column: 1 / -1; }
     .contact-top { grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 28px; }
     section { padding-block: 72px; }
   }
@@ -780,6 +787,26 @@
           <div class="frame"><img src="media/adam-dorfman.jpg" alt="" loading="lazy"><span class="open">Watch on Google Drive ↗</span></div>
           <div class="cap"><span class="t">Adam Dorfman: Built From the Ground Up</span><small>Full Success Unlocked episode</small></div>
         </a>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-head">
+        <div><h3>Motion graphics</h3><p class="sub-line">Built in code with <span class="code-tag">Remotion</span> (React). Every animation, card and transition is a component, not a template.</p></div>
+      </div>
+      <div class="mg-grid">
+        <figure class="reel" style="margin:0">
+          <div class="thumb vplayer"><video data-src="media/motion/su-explainer.mp4" poster="media/motion/su-explainer.jpg" playsinline controls></video><button class="bigplay" type="button" aria-label="Play Success Unlocked platform explainer">▶</button></div>
+          <figcaption class="cap"><span class="t">Success Unlocked platform explainer</span><small>Remotion · 1:02 · VO + sound design</small></figcaption>
+        </figure>
+        <figure class="reel" style="margin:0">
+          <div class="thumb vplayer"><video data-src="media/motion/door-is-open.mp4" poster="media/motion/door-is-open.jpg" playsinline controls></video><button class="bigplay" type="button" aria-label="Play The Door Is Open">▶</button></div>
+          <figcaption class="cap"><span class="t">The Door Is Open</span><small>Remotion · 2.5D launch · 0:24</small></figcaption>
+        </figure>
+        <figure class="reel wide" style="margin:0">
+          <div class="thumb vplayer landscape"><video data-src="media/motion/escuela-cinematic.mp4" poster="media/motion/escuela-cinematic.jpg" playsinline controls></video><button class="bigplay" type="button" aria-label="Play Escuela Nueva: cinematic landing video">▶</button></div>
+          <figcaption class="cap"><span class="t">Escuela Nueva: cinematic landing video</span><small>Remotion · 3D + UI motion · 0:30 · Español</small></figcaption>
+        </figure>
       </div>
     </div>
 
