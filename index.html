@@ -298,8 +298,7 @@
   }
 
   /* motion graphics */
-  .mg-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 2.4fr); gap: 16px 14px; align-items: center; }
-  .thumb.landscape { aspect-ratio: 16 / 9; }
+  .mg-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px 14px; }
   .code-tag { color: var(--cyan); }
 
   /* AI edits & personal */
@@ -506,8 +505,7 @@
     .pair > div + div { margin-top: 56px; }
     .quotes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .ai, .photos { grid-template-columns: 1fr; }
-    .mg-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .mg-grid .wide { grid-column: 1 / -1; }
+    .mg-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .contact-top { grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 28px; }
     section { padding-block: 72px; }
   }
@@ -520,7 +518,7 @@
     .tl-body { --label: 30px; }
     .clip { padding: 0 5px; font-size: 10px; }
     .ruler .lane span:nth-child(even) { visibility: hidden; }
-    .reels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .reels, .mg-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .pair .reels { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
     .pair .reel .cap { font-size: 12px; }
     .contact-top { grid-template-columns: 1fr; }
@@ -796,16 +794,24 @@
       </div>
       <div class="mg-grid">
         <figure class="reel" style="margin:0">
-          <div class="thumb vplayer"><video data-src="media/motion/su-explainer.mp4" poster="media/motion/su-explainer.jpg" playsinline controls></video><button class="bigplay" type="button" aria-label="Play Success Unlocked platform explainer">▶</button></div>
-          <figcaption class="cap"><span class="t">Success Unlocked platform explainer</span><small>Remotion · 1:02 · VO + sound design</small></figcaption>
+          <div class="thumb vplayer"><video data-src="media/motion/su-docuseries.mp4" poster="media/motion/su-docuseries.jpg" playsinline controls></video><button class="bigplay" type="button" aria-label="Play Success Unlocked docu-series explainer">▶</button></div>
+          <figcaption class="cap"><span class="t">Success Unlocked docu-series explainer</span><small>UI explainer · 0:45</small></figcaption>
         </figure>
         <figure class="reel" style="margin:0">
           <div class="thumb vplayer"><video data-src="media/motion/door-is-open.mp4" poster="media/motion/door-is-open.jpg" playsinline controls></video><button class="bigplay" type="button" aria-label="Play The Door Is Open">▶</button></div>
-          <figcaption class="cap"><span class="t">The Door Is Open</span><small>Remotion · 2.5D launch · 0:24</small></figcaption>
+          <figcaption class="cap"><span class="t">The Door Is Open</span><small>2.5D launch · 0:30</small></figcaption>
         </figure>
-        <figure class="reel wide" style="margin:0">
-          <div class="thumb vplayer landscape"><video data-src="media/motion/escuela-cinematic.mp4" poster="media/motion/escuela-cinematic.jpg" playsinline controls></video><button class="bigplay" type="button" aria-label="Play Escuela Nueva: cinematic landing video">▶</button></div>
-          <figcaption class="cap"><span class="t">Escuela Nueva: cinematic landing video</span><small>Remotion · 3D + UI motion · 0:30 · Español</small></figcaption>
+        <figure class="reel" style="margin:0">
+          <div class="thumb vplayer"><video data-src="media/motion/su-explainer.mp4" poster="media/motion/su-explainer.jpg" playsinline controls></video><button class="bigplay" type="button" aria-label="Play Success Unlocked platform explainer">▶</button></div>
+          <figcaption class="cap"><span class="t">Success Unlocked platform explainer</span><small>UI explainer · VO · 1:02</small></figcaption>
+        </figure>
+        <figure class="reel" style="margin:0">
+          <div class="thumb vplayer"><video data-src="media/motion/escuela-explainer.mp4" poster="media/motion/escuela-explainer.jpg" playsinline controls></video><button class="bigplay" type="button" aria-label="Play La Escuela Nueva explainer">▶</button></div>
+          <figcaption class="cap"><span class="t">La Escuela Nueva explainer</span><small>Character + UI · Español · 1:02</small></figcaption>
+        </figure>
+        <figure class="reel" style="margin:0">
+          <div class="thumb vplayer"><video data-src="media/motion/no-digas.mp4" poster="media/motion/no-digas.jpg" playsinline controls></video><button class="bigplay" type="button" aria-label="Play “No digas”: sales words reel">▶</button></div>
+          <figcaption class="cap"><span class="t">“No digas”: sales words reel</span><small>Kinetic type · Español · 0:47</small></figcaption>
         </figure>
       </div>
     </div>
