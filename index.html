@@ -7,7 +7,9 @@
 <meta property="og:title" content="Nehemiah Garcia · Video Editor × Developer">
 <meta property="og:description" content="7.2M views in 60 days on my own clipping account. Short-form, long-form, motion graphics and code.">
 <meta property="og:image" content="media/nehemiah.jpg">
-<link rel="icon" href="media/avatar.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="media/favicon-64.png">
+<link rel="apple-touch-icon" href="media/apple-touch-icon.png">
 <title>Nehemiah Garcia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -126,7 +128,11 @@
   .monitor .bigplay { width: 56px; height: 56px; font-size: 20px; }
   .hero-stat { margin-top: 26px; font-size: 15px; color: var(--muted); display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
   .hero-stat b { font-family: var(--display); font-size: 28px; font-weight: 800; color: var(--amber); letter-spacing: -.02em; }
-  .mark img { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--line); display: block; }
+  .mark .logo {
+    width: 28px; height: 28px; border-radius: 7px; background: var(--amber); color: var(--ink);
+    display: grid; place-items: center; font-family: "Arial Black", var(--display); font-weight: 900;
+    font-size: 11px; letter-spacing: -.02em; line-height: 1;
+  }
   .monitor-cap b { font-family: var(--display); font-weight: 700; font-size: 16px; }
   .monitor-cap span { font-family: var(--mono); font-size: 11px; color: var(--muted); }
 
@@ -231,9 +237,6 @@
   .pair .reels { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
   /* hosted players */
-  .su { display: grid; grid-template-columns: repeat(2, minmax(0, 260px)) minmax(0, 1fr); gap: 16px 20px; align-items: start; }
-  .su-note { color: var(--muted); font-size: 15px; display: grid; gap: 12px; align-content: start; }
-  .su-note b { color: var(--text); font-weight: 500; }
   .vplayer { position: relative; }
   .vplayer video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; background: #000; }
   .vplayer.wide { aspect-ratio: 16 / 9; }
@@ -281,6 +284,27 @@
     position: absolute; right: 10px; bottom: 10px; font-family: var(--mono); font-size: 12px;
     background: var(--amber); color: #1a1206; padding: 6px 10px; border-radius: 6px;
   }
+
+  /* AI edits & personal */
+  .ai {
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 28px; align-items: center;
+    background: linear-gradient(135deg, rgba(95, 212, 230, .08), transparent 55%), var(--panel);
+    border: 1px solid var(--line); border-radius: 14px; padding: 28px;
+  }
+  .ai h3 { font-size: clamp(26px, 3.6vw, 36px); font-weight: 800; letter-spacing: -.02em; margin-block: 10px 12px; }
+  .ai p { color: var(--muted); }
+  .ai .stat-row { margin-top: 20px; }
+  .stills { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; text-decoration: none; }
+  .stills img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 8px; border: 1px solid var(--line); display: block; }
+  .stills img:first-child { grid-column: 1 / -1; }
+  .stills:hover img { border-color: rgba(95, 212, 230, .5); }
+  .photos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .photo-set { display: grid; gap: 10px; text-decoration: none; min-width: 0; }
+  .mosaic { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+  .mosaic img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 6px; display: block; filter: saturate(.95); transition: filter .2s, transform .2s; }
+  .photo-set:hover .mosaic img { filter: saturate(1.1); transform: translateY(-2px); }
+  .photo-set .cap { font-size: 14px; line-height: 1.4; }
+  .photo-set .cap small { display: block; font-family: var(--mono); font-size: 11px; color: var(--muted); margin-top: 3px; }
 
   /* quote cards */
   .quotes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
@@ -338,11 +362,11 @@
 
   /* ---------- video: capabilities ---------- */
   .caps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px; }
-  .cap { display: grid; grid-template-columns: 112px 1fr; gap: 16px; padding-block: 20px; border-bottom: 1px solid var(--line); }
-  .cap .k { font-family: var(--mono); font-size: 12px; color: var(--muted); padding-top: 3px; }
-  .cap .k.code { color: var(--cyan); }
-  .cap h3 { font-size: 18px; margin-bottom: 6px; }
-  .cap p { color: var(--muted); font-size: 15px; }
+  .skill { display: grid; grid-template-columns: 112px 1fr; gap: 16px; padding-block: 20px; border-bottom: 1px solid var(--line); }
+  .skill .k { font-family: var(--mono); font-size: 12px; color: var(--muted); padding-top: 3px; }
+  .skill .k.code { color: var(--cyan); }
+  .skill h3 { font-size: 18px; margin-bottom: 6px; }
+  .skill p { color: var(--muted); font-size: 15px; }
 
   .credits { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: center; }
   .credits .label { font-family: var(--mono); font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; }
@@ -461,9 +485,8 @@
     .contact-grid { grid-template-columns: 1fr; }
     .pair, .longform { grid-template-columns: 1fr; }
     .pair > div + div { margin-top: 56px; }
-    .su { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .su-note { grid-column: 1 / -1; }
     .quotes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .ai, .photos { grid-template-columns: 1fr; }
     .contact-top { grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 28px; }
     section { padding-block: 72px; }
   }
@@ -472,7 +495,7 @@
     .navlinks .opt { display: none; }
     .hero { padding-block: 40px 24px; }
     .accounts, .projects, .process { grid-template-columns: 1fr; }
-    .cap { grid-template-columns: 1fr; gap: 6px; }
+    .skill { grid-template-columns: 1fr; gap: 6px; }
     .tl-body { --label: 30px; }
     .clip { padding: 0 5px; font-size: 10px; }
     .ruler .lane span:nth-child(even) { visibility: hidden; }
@@ -485,7 +508,7 @@
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .rec::before { animation: none; }
-    a.reel:hover .thumb img, .qcard:hover img { transform: none; }
+    a.reel:hover .thumb img, .qcard:hover img, .photo-set:hover .mosaic img { transform: none; }
     .vplayer.loading .bigplay::after { animation-duration: 2s; }
   }
 </style>
@@ -495,7 +518,7 @@
 
 <nav>
   <div class="wrap">
-    <a class="mark" href="#top"><img src="media/avatar.jpg" alt="" width="28" height="28">Nehemiah Garcia</a>
+    <a class="mark" href="#top"><span class="logo" aria-hidden="true">NG</span>Nehemiah Garcia</a>
     <div class="navlinks">
       <a href="#video">Video</a>
       <a href="#code">Code</a>
@@ -638,14 +661,14 @@
 
     <div class="group">
       <div class="group-head">
-        <div><h3>Success Unlocked</h3><p class="sub-line">Short-form clips from full interview episodes, subtitled and branded.</p></div>
+        <div><h3>Success Unlocked</h3><p class="sub-line">Short-form clips from full interview episodes: hook first, subtitled, key words in the brand’s pink. The first two play right here.</p></div>
         <div class="links">
           <a class="acct-link" href="https://www.tiktok.com/@successunlocked_official" target="_blank" rel="noopener">TikTok ↗</a>
           <a class="acct-link" href="https://www.tiktok.com/@successunlockedenespanol" target="_blank" rel="noopener">TikTok (Español) ↗</a>
           <a class="acct-link" href="https://www.instagram.com/successunlockedenespanol" target="_blank" rel="noopener">Instagram (Español) ↗</a>
         </div>
       </div>
-      <div class="su">
+      <div class="reels">
         <figure class="reel" style="margin:0">
           <div class="thumb vplayer"><video data-src="media/andy-levine.mp4" poster="media/andy-levine.jpg" playsinline controls></video><button class="bigplay" type="button" aria-label="Play Andy Levine clip">▶</button></div>
           <figcaption class="cap">Andy Levine: Built on Belonging<small>0:59 · plays here</small></figcaption>
@@ -654,13 +677,6 @@
           <div class="thumb vplayer"><video data-src="media/mason-maggio.mp4" poster="media/mason-maggio.jpg" playsinline controls></video><button class="bigplay" type="button" aria-label="Play Mason Maggio clip">▶</button></div>
           <figcaption class="cap">Mason Maggio: NASCAR's next rookie of the year<small>0:40 · plays here</small></figcaption>
         </figure>
-        <div class="su-note">
-          <p>Each episode gets cut into a set of clips. I pick the moment that works <b>without any context</b>, open on the hook, and add subtitles with key words highlighted in the brand's pink.</p>
-          <p>The same review pass produces the <b>quote cards</b> further down this page.</p>
-        </div>
-      </div>
-      <p class="reels-label">Talking-head clips</p>
-      <div class="reels">
         <a class="reel" href="https://www.tiktok.com/@successunlocked_official/video/7662812579152022798" target="_blank" rel="noopener">
           <div class="thumb"><img src="media/tt/7662812579152022798.jpg" alt="" loading="lazy"></div>
           <div class="cap">People stole from him and lied to his face<small>Dominique Wilkins · TikTok</small></div>
@@ -753,6 +769,43 @@
       </div>
     </div>
 
+    <div class="group">
+      <div class="group-head">
+        <div><h3>AI edits &amp; personal work</h3><p class="sub-line">Experiments on my personal TikTok.</p></div>
+        <a class="acct-link" href="https://www.tiktok.com/@garcianehemiah_" target="_blank" rel="noopener">@garcianehemiah_ ↗</a>
+      </div>
+      <div class="ai">
+        <div>
+          <span class="chip">AI edit · TikTok</span>
+          <h3>Solving Batang Quiapo’s Problem</h3>
+          <p>An AI edit that puts me inside scenes from <i>Batang Quiapo</i>, stepping in to settle the show’s drama my own way. It’s a fan edit that took off.</p>
+          <div class="stat-row">
+            <div><b>570.1K</b><span>views</span></div>
+            <div><b>14K</b><span>likes</span></div>
+            <div><b>4.6K</b><span>shares</span></div>
+          </div>
+          <p style="margin-top:18px"><a class="acct-link" href="https://www.tiktok.com/@garcianehemiah_/video/7660476607655578888" target="_blank" rel="noopener">Watch on TikTok ↗</a></p>
+        </div>
+        <a class="stills" href="https://www.tiktok.com/@garcianehemiah_/video/7660476607655578888" target="_blank" rel="noopener" aria-label="Watch Solving Batang Quiapo’s Problem on TikTok">
+          <img src="media/personal/bq-2.jpg" alt="Still from the AI edit" loading="lazy">
+          <img src="media/personal/bq-1.jpg" alt="" loading="lazy">
+          <img src="media/personal/bq-3.jpg" alt="" loading="lazy">
+        </a>
+      </div>
+
+      <p class="reels-label">Photography</p>
+      <div class="photos">
+        <a class="photo-set" href="https://www.tiktok.com/@garcianehemiah_/photo/7463426522825624840" target="_blank" rel="noopener">
+          <div class="mosaic"><img src="media/personal/campus-1.jpg" alt="" loading="lazy"><img src="media/personal/campus-2.jpg" alt="" loading="lazy"><img src="media/personal/campus-3.jpg" alt="" loading="lazy"><img src="media/personal/campus-4.jpg" alt="" loading="lazy"></div>
+          <div class="cap">A day in 3rd-year CompSci<small>Photo set · 26 photos · TikTok</small></div>
+        </a>
+        <a class="photo-set" href="https://www.tiktok.com/@garcianehemiah_/photo/7462961802192620808" target="_blank" rel="noopener">
+          <div class="mosaic"><img src="media/personal/street-1.jpg" alt="" loading="lazy"><img src="media/personal/street-2.jpg" alt="" loading="lazy"><img src="media/personal/street-3.jpg" alt="" loading="lazy"><img src="media/personal/street-4.jpg" alt="" loading="lazy"></div>
+          <div class="cap">Street photography<small>Photo set · 15 photos · TikTok</small></div>
+        </a>
+      </div>
+    </div>
+
     <div class="group" id="quotes">
       <div class="group-head">
         <div><h3>Quote cards</h3><p class="sub-line">Lines I pulled while reviewing full episodes, built as two-frame cards for carousels.</p></div>
@@ -781,12 +834,12 @@
 
     <div class="sub"><h3>Beyond the cut</h3><span class="note">what the role grew into</span></div>
     <div class="caps">
-      <div class="cap"><span class="k code">motion · code</span><div><h3>Remotion explainers</h3><p>A platform explainer for Success Unlocked and La Escuela Nueva, with the motion graphics written in code.</p></div></div>
-      <div class="cap"><span class="k">motion</span><div><h3>2.5D motion &amp; announcements</h3><p>Announcement videos with 2.5D motion graphics, plus countdown and promo assets.</p></div></div>
-      <div class="cap"><span class="k">long-form</span><div><h3>YouTube &amp; webinars</h3><p>Full-length edits covering structure, cleanup, captions and graphics. Zoom webinars and podcasts cut into clip series.</p></div></div>
-      <div class="cap"><span class="k">design</span><div><h3>Thumbnails &amp; quote cards</h3><p>YouTube thumbnails, including Spanish long-form. Quote cards made from hooks I found while reviewing footage.</p></div></div>
-      <div class="cap"><span class="k code">web · code</span><div><h3>HTML email creative</h3><p>Email designs for Success Unlocked and La Escuela Nueva, written in HTML.</p></div></div>
-      <div class="cap"><span class="k code">web · code</span><div><h3>Giveaway wheel website</h3><p>A spinning winner-picker site built for a Glam Day giveaway.</p></div></div>
+      <div class="skill"><span class="k code">motion · code</span><div><h3>Remotion explainers</h3><p>A platform explainer for Success Unlocked and La Escuela Nueva, with the motion graphics written in code.</p></div></div>
+      <div class="skill"><span class="k">motion</span><div><h3>2.5D motion &amp; announcements</h3><p>Announcement videos with 2.5D motion graphics, plus countdown and promo assets.</p></div></div>
+      <div class="skill"><span class="k">long-form</span><div><h3>YouTube &amp; webinars</h3><p>Full-length edits covering structure, cleanup, captions and graphics. Zoom webinars and podcasts cut into clip series.</p></div></div>
+      <div class="skill"><span class="k">design</span><div><h3>Thumbnails &amp; quote cards</h3><p>YouTube thumbnails, including Spanish long-form. Quote cards made from hooks I found while reviewing footage.</p></div></div>
+      <div class="skill"><span class="k code">web · code</span><div><h3>HTML email creative</h3><p>Email designs for Success Unlocked and La Escuela Nueva, written in HTML.</p></div></div>
+      <div class="skill"><span class="k code">web · code</span><div><h3>Giveaway wheel website</h3><p>A spinning winner-picker site built for a Glam Day giveaway.</p></div></div>
     </div>
 
     <div class="credits">
